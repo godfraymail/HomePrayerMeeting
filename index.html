@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Video...</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+#box{
+    max-width:500px;
+    padding:20px;
+}
+.spinner{
+    width:60px;
+    height:60px;
+    border:6px solid #444;
+    border-top:6px solid #00d4ff;
+    border-radius:50%;
+    margin:20px auto;
+    animation:spin 1s linear infinite;
+}
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+.hidden{
+    display:none;
+}
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading">
+    <div id="box">
+        <h2>Loading video...</h2>
+        <div class="spinner"></div>
+        <p>Checking device compatibility...</p>
+    </div>
+</div>
+
+<div id="result" class="hidden">
+    <div id="box">
+        <h1>❌ Device Not Supported</h1>
+
+        <h2>Your phone is too old to play this video!</h2>
+
+        <p>Please throw your phone into the nearest bin 🗑️ and buy a new one. 😂</p>
+
+        <h3>🤣 GOTCHA!! 🤣</h3>
+
+        <p>Your phone is absolutely fine.<br>
+        This was just a prank from someone who loves you! ❤️</p>
+
+        <button onclick="location.reload()">Try Again 😄</button>
+    </div>
+</div>
+
+<script>
+setTimeout(function(){
+    document.getElementById("loading").style.display="none";
+    document.getElementById("result").classList.remove("hidden");
+},4000);
+</script>
+
+</body>
+</html>
